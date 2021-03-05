@@ -14,11 +14,6 @@ use React\EventLoop\TimerInterface;
  */
 class Loop
 {
-    public static function getLoop(): LoopInterface
-    {
-        return Utils::getLoop();
-    }
-
     /**
      * @param float|int $interval micro
      * @param Closure $closure
@@ -27,6 +22,11 @@ class Loop
     public static function interval($interval, Closure $closure): TimerInterface
     {
         return self::getLoop()->addPeriodicTimer($interval, $closure);
+    }
+
+    public static function getLoop(): LoopInterface
+    {
+        return Utils::getLoop();
     }
 
     /**
