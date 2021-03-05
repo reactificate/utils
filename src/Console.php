@@ -15,6 +15,17 @@ class Console
     }
 
     /**
+     * @param mixed $data
+     */
+    public static function dump($data): void
+    {
+        ob_start();
+        dump($data);
+        $output = ob_get_clean();
+        self::echo($output);
+    }
+
+    /**
      * @return resource
      */
     protected static function getStdOut()
