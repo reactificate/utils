@@ -20,3 +20,17 @@ Loop::interval(0.5, function (){
 
 Loop::getLoop()->run();
 ```
+
+Console output formatting
+```php
+use Reactificate\Utils\Console;
+
+Console::write(uniqid());
+Console::info(uniqid());
+Console::comment(uniqid());
+Console::dump([uniqid()]);
+Console::echo(uniqid());
+Console::error(uniqid());
+Console::question(uniqid());
+Console::writeln(uniqid());
+```
