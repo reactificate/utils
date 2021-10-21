@@ -27,6 +27,10 @@ class Utils
         return self::$loop;
     }
 
+    /**
+     * @param string $key
+     * @param mixed $data
+     */
     public static function set(string $key, $data): void
     {
         self::$data[$key] = $data;
@@ -37,7 +41,7 @@ class Utils
         self::$data['config_directory'] = $path;
     }
 
-    public static function getConfigDirectory(): array
+    public static function getConfigDirectory(): string
     {
         return self::$data['config_directory'];
     }
