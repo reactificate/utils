@@ -15,7 +15,7 @@
     "require": {
         "php": "^7.4 || ^8.0",
         "symfony/console": "^5.3",
-        "react/event-loop": "^1.1",
+        "react/event-loop": "^1.2",
         "symfony/var-dumper": "^5.2"
     },
     "autoload": {

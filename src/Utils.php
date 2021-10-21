@@ -12,19 +12,12 @@ class Utils
         'config_directory' => '',
     ];
 
-    private static LoopInterface $loop;
-
-    public static function init(LoopInterface $loop): void
-    {
-        self::$loop = $loop;
-    }
-
     /**
      * @return LoopInterface
      */
     public static function getLoop(): LoopInterface
     {
-        return self::$loop;
+        return \React\EventLoop\Loop::get();
     }
 
     /**
