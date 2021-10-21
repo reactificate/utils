@@ -62,6 +62,7 @@ class Config
      * Pluck item form configuration
      *
      * @param string|array $key
+     * @param mixed $default
      * @return mixed
      */
     public function get($key, $default = null)
