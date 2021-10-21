@@ -8,7 +8,10 @@ use React\EventLoop\LoopInterface;
 
 class Utils
 {
-    protected static array $data;
+    protected static array $data = [
+        'config_directory' => '',
+    ];
+
     private static LoopInterface $loop;
 
     public static function init(LoopInterface $loop): void
@@ -24,9 +27,19 @@ class Utils
         return self::$loop;
     }
 
-    public static function set(string $key, object $emitter): void
+    public static function set(string $key, $data): void
     {
-        self::$data[$key] = $emitter;
+        self::$data[$key] = $data;
+    }
+
+    public static function setConfigDirectory(string $path): void
+    {
+        self::$data['config_directory'] = $path;
+    }
+
+    public static function getConfigDirectory(): array
+    {
+        return self::$data['config_directory'];
     }
 
     /**
