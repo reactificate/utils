@@ -56,4 +56,7 @@ $config = Config::load('server.php')
 
 var_dump($config->get('address.host'));
 var_dump($config->get('address.port'));
+
+// You can also get the values at once
+[$host, $port] = $config->get(['address.host', 'address.port']);
 ```

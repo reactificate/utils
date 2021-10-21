@@ -61,12 +61,22 @@ class Config
     /**
      * Pluck item form configuration
      *
-     * @param string $key
+     * @param string|array $key
      * @return mixed
      */
-    public function get(string $key)
+    public function get($key, $default = null)
     {
-        return ArrayHelper::get($this->configuration, $key);
+        if (is_array($key)) {
+            $values = [];
+
+            foreach ($key as $itemKey) {
+                $values[] = ArrayHelper::get($this->configuration, $itemKey, $default);
+            }
+
+            return $values;
+        }
+
+        return ArrayHelper::get($this->configuration, $key, $default);
     }
 
     /**

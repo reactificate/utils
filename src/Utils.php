@@ -52,6 +52,6 @@ class Utils
      */
     public static function get(string $key)
     {
-        return self::$data[$key];
+        return self::$data[$key] ?? null;
     }
 }

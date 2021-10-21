@@ -31,7 +31,7 @@ class ArrayHelper
      */
     public static function get(array $data, string $key, $default = null)
     {
-        if (str_contains($key, '.')) {
+        if (false !== strpos($key, '.')) {
             $expKeys = explode('.', $key);
             $value = $data[$expKeys[0]];
 
