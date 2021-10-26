@@ -45,7 +45,7 @@ class Config
      */
     public static function load(string $configFile): Config
     {
-        return new Config($configFile);
+        return new static($configFile);
     }
 
     /**
